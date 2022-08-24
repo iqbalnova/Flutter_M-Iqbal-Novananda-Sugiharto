@@ -13,6 +13,7 @@ Git dikenal juga dengan _distributed revision control_ (VCS terdistribusi), arti
 
 Kita harus menginisialisasi projek kita dengan menggunakan command git init pada terminal komputer
 ![enter image description here](https://cdn.discordapp.com/attachments/831559267479060560/1011935188017741864/unknown.png)
+
 Perintah tersebut akan membuat direktori bernama `proyek-01`. Kalau direktorinya sudah ada, maka Git akan melakukan inisialisasi di dalam direktori tersebut.
 
 Perintah `git init` akan membuat sebuah direktori bernama `.git` di dalam proyek kita. Direktori ini digunakan Git sebagai database untuk menyimpan perubahan yang kita lakukan.
