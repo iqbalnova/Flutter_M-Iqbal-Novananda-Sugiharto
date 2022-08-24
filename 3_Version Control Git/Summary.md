@@ -1,6 +1,6 @@
-# # Nama : M Iqbal Novananda Sugiharto
+Nama : M Iqbal Novananda Sugiharto
 
-# # Kelas : Flutter A
+Kelas : Flutter A
 
 # Apa itu GIT
 
