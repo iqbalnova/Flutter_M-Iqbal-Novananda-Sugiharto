@@ -1,3 +1,4 @@
 class Hewan {
-  int? beratHewan;
+  Hewan(this.beratHewan);
+  double beratHewan;
 }

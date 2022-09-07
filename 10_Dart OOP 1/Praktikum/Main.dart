@@ -1,13 +1,16 @@
-import 'Hewan.dart';
-import 'Mobil.dart';
+import 'hewan.dart';
+import 'mobil.dart';
 
 void main(List<String> args) {
-  Hewan hewan = Hewan();
-  Mobil mobil = Mobil();
-  // var name = hewan.nama =
-  print(hewan.beratHewan);
-  mobil.tambahMuatan(9);
-  print(mobil.tambahMuatan(2));
-  print(mobil.muatan);
-  print(mobil.totalMuatan());
+  Mobil mobil = Mobil(100);
+  Hewan kucing = Hewan(5);
+  Hewan gajah = Hewan(50);
+  Hewan dinosaurus = Hewan(120);
+
+  mobil.tambahMuatan(dinosaurus);
+  mobil.tambahMuatan(kucing);
+  mobil.tambahMuatan(gajah);
+
+  print('Maksimal kapasitas Mobil : ${mobil.maxMuatan} kg');
+  print('Total muatan hewan : ${mobil.totalMuatan()} kg');
 }

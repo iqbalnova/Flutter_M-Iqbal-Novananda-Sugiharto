@@ -1,20 +1,23 @@
-import 'Hewan.dart';
+import 'hewan.dart';
 
 class Mobil {
-  Hewan hewan = Hewan();
-  final int maxMuatan = 100;
-  List muatan = [];
-  int total = 0;
+  Mobil(this.maxMuatan);
+  int maxMuatan;
+  List<Hewan> muatan = [];
+  double total = 0;
 
-  int totalMuatan() {
-    for (int element in muatan) {
-      total += element;
+  double totalMuatan() {
+    for (final element in muatan) {
+      total += element.beratHewan;
     }
     return total;
   }
 
-  List tambahMuatan(int val) {
-    muatan.add(hewan.beratHewan = val);
-    return muatan;
+  void tambahMuatan(Hewan hewan) {
+    if (hewan.beratHewan < maxMuatan) {
+      muatan.add(hewan);
+    } else {
+      print('Maaf kapasitas sudah penuh!');
+    }
   }
 }
