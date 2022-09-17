@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:telegramslicing/helpers/data.dart';
+
+import '../widget/drawer.dart';
 
 class FirstScreen extends StatelessWidget {
   const FirstScreen({super.key});
@@ -7,37 +10,27 @@ class FirstScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('First Screen'),
+        title: const Text('Telegram'),
+        actions: [
+          IconButton(onPressed: () {}, icon: const Icon(Icons.search)),
+        ],
       ),
-      body: Center(
-        child: ElevatedButton(
-          onPressed: () {
-            Navigator.pushNamed(context, '/second');
-          },
-          child: const Text('Launch screen'),
-        ),
-      ),
-      drawer: Drawer(
-        child: ListView(
-          padding: EdgeInsets.zero,
-          children: [
-            const DrawerHeader(
-              decoration: BoxDecoration(
-                color: Colors.blue,
+      body: ListView.separated(
+          itemBuilder: ((context, index) {
+            return ListTile(
+              leading: CircleAvatar(
+                backgroundImage: AssetImage(listData[index].avatar),
               ),
-              child: Text('Drawer Header'),
-            ),
-            ListTile(
-              title: const Text('Item 1'),
-              onTap: () {},
-            ),
-            ListTile(
-              title: const Text('Item 2'),
-              onTap: () {},
-            ),
-          ],
-        ),
-      ),
+              title: Text(listData[index].nama),
+              subtitle: Text(listData[index].chat),
+              trailing: Text(listData[index].time),
+            );
+          }),
+          separatorBuilder: (context, index) => const Divider(
+                color: Color.fromARGB(255, 207, 201, 201),
+              ),
+          itemCount: listData.length),
+      drawer: const DrawerWidget(),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
         child: const Icon(Icons.edit),
