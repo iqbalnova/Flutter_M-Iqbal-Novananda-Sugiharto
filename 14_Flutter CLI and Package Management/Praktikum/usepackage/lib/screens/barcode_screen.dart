@@ -41,14 +41,11 @@ class NewBarcodeWidget extends StatelessWidget {
       child: Column(
         children: [
           BarcodeWidget(
-            barcode: Barcode.qrCode(
-              errorCorrectLevel: BarcodeQRCorrectionLevel.high,
-            ),
+            barcode: Barcode.code128(),
             data: data,
-            width: 100,
+            width: 200,
             height: 100,
           ),
-          Text(data)
         ],
       ),
     );
