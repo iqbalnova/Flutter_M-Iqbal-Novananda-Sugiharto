@@ -4,9 +4,7 @@ Kelas : Flutter A
 
 # Summary
 
-#### Flutter Animation
-
-Bloc dikembangkan dengan berdasarkan
+### Flutter Animation
 
 - **Animated Container** : merupakan salah satu widget yang masuk kedalam tipe implicit animation. Selain animasi bar chart diatas masih banyak lagi animasi yang bisa kita buat.
 
