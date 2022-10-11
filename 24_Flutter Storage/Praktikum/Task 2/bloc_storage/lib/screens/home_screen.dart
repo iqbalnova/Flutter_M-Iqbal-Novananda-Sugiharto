@@ -1,4 +1,5 @@
 import 'package:bloc_storage/bloc/register_bloc.dart';
+import 'package:bloc_storage/bloc/register_event.dart';
 import 'package:bloc_storage/bloc/register_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -39,9 +40,9 @@ class _SecondScreenState extends State<SecondScreen> {
                     style: const TextStyle(fontSize: 30)),
                 ElevatedButton(
                     onPressed: () {
-                      // context.read<RegisterProvider>().deleteData();
-                      // Navigator.pushNamedAndRemoveUntil(
-                      //     context, '/', (route) => false);
+                      bloc.add(DeleteRegister());
+                      Navigator.pushNamedAndRemoveUntil(
+                          context, '/', (route) => false);
                     },
                     child: const Text('SignOut'))
               ],

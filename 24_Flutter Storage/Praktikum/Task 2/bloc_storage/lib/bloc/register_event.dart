@@ -10,8 +10,4 @@ class AddRegister extends RegisterEvent {
   AddRegister({required this.dataModel});
 }
 
-class DeleteRegister extends RegisterEvent {
-  final DataModel dataModel;
-
-  DeleteRegister({required this.dataModel});
-}
+class DeleteRegister extends RegisterEvent {}

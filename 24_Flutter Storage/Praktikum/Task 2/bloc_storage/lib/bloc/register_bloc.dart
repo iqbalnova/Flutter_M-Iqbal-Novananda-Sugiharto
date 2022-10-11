@@ -1,17 +1,30 @@
 import 'package:bloc_storage/Models/data_model.dart';
+import 'package:bloc_storage/sharedpref/shared.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'register_event.dart';
 import 'register_state.dart';
 
 class RegisterBloc extends Bloc<RegisterEvent, RegisterState> {
+  late SharedData _shared;
+
   RegisterBloc()
       : super(RegisterInitial(dataRegister: DataModel('', '', '', ''))) {
-    on<AddRegister>((event, emit) {
-      emit(RegisterLoaded(dataRegister: event.dataModel));
+    _shared = SharedData();
+
+    on<AddRegister>((event, emit) async {
+      await _shared.saveData(event.dataModel);
+      final data = await _shared.getData();
+      if (data != null) {
+        emit(RegisterLoaded(dataRegister: data));
+      }
     });
-    on<DeleteRegister>((event, emit) {
-      // emit(ContactLoaded(contacts: [...state.contacts]..remove(event.contact)));
+    on<DeleteRegister>((event, emit) async {
+      await _shared.removeData();
+      final data = await _shared.getData();
+      if (data != null) {
+        emit(RegisterLoaded(dataRegister: data));
+      }
     });
   }
 }
